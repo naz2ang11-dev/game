@@ -1,8 +1,16 @@
 import React, { useState, useCallback } from 'react';
-import { Trophy, RefreshCw, Volume2, VolumeX, Swords, Shuffle, Repeat } from 'lucide-react';
+import { RefreshCw, Volume2, VolumeX, Swords, Shuffle, Repeat } from 'lucide-react';
 import { GameCard } from './components/GameCard';
 import { HistoryLog } from './components/HistoryLog';
 import { Team, GameMode, HistoryItem } from './types';
+
+// Custom Logo Icon Component (Matches the favicon)
+const LogoIcon = ({ className }: { className?: string }) => (
+  <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg" className={className}>
+    <path d="M35 10C24 10 15 22 15 35C15 55 35 70 35 70C35 70 55 55 55 35C55 22 46 10 35 10Z" fill="#EF4444" />
+    <path d="M65 30C54 30 45 42 45 55C45 75 65 90 65 90C65 90 85 75 85 55C85 42 76 30 65 30Z" fill="#3B82F6" />
+  </svg>
+);
 
 // Helper for UI click sounds (simple beep)
 const playClickSound = () => {
@@ -133,11 +141,10 @@ export default function App() {
     <div className="min-h-screen flex flex-col items-center py-8 px-4 font-sans text-gray-800">
       {/* Header */}
       <header className="flex flex-col items-center mb-8 text-center">
-        <div className="flex items-center gap-2 mb-2">
-          <Trophy className="text-yellow-500 w-8 h-8 fill-current" />
+        <div className="flex items-center gap-3 mb-2">
+          <LogoIcon className="w-12 h-12 drop-shadow-sm" />
           <h1 className="text-3xl md:text-4xl font-extrabold text-gray-800 font-jua">한걸음 술래잡기</h1>
         </div>
-        {/* Removed subtitle */}
       </header>
 
       {/* Main Game Area - Increased max-w to 6xl for larger cards */}
