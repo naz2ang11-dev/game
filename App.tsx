@@ -137,11 +137,11 @@ export default function App() {
           <Trophy className="text-yellow-500 w-8 h-8 fill-current" />
           <h1 className="text-3xl md:text-4xl font-extrabold text-gray-800 font-jua">한걸음 술래잡기</h1>
         </div>
-        <p className="text-gray-500 text-sm font-medium">심판은 인공지능에게 맡기세요!</p>
+        {/* Removed subtitle */}
       </header>
 
-      {/* Main Game Area */}
-      <div className="flex flex-row justify-center items-center gap-4 md:gap-8 w-full max-w-4xl mb-10">
+      {/* Main Game Area - Increased max-w to 6xl for larger cards */}
+      <div className="flex flex-row justify-center items-center gap-4 md:gap-8 w-full max-w-6xl mb-10">
         <GameCard 
           team="RED" 
           isActive={currentTeam === 'RED'} 
